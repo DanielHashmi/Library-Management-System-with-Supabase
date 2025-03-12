@@ -9,7 +9,7 @@ st.set_page_config(
 )
 
 # Custom CSS
-st.markdown("""
+st.html("""
     <style>
     .main {
         padding: 2rem;
@@ -36,7 +36,7 @@ st.markdown("""
         padding: 1rem 0;
     }
     </style>
-""", unsafe_allow_html=True)
+""")
 
 # Load the books dataset
 books = pd.read_csv('library.csv')
