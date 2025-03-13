@@ -1,40 +1,37 @@
-# Library Management System Using Pandas & Streamlit
+# 📚 Library Management System
 
-This is a simple Library Management System built using Streamlit and Pandas. It allows you to manage a collection of books, including adding, removing, displaying, and searching for books, as well as displaying statistics about the collection.
+A simple Library Management System built with **Streamlit** and **MongoDB**. It allows users to add, remove, display, search books, and view basic statistics.
 
 ## Features
-
-- **Add a Book**: Add a new book to the library.
-- **Remove a Book**: Remove an existing book from the library.
-- **Display all Books**: Display all books in the library.
-- **Search for a Book**: Search for a book by title, author, genre, or read status.
-- **Display Statistics**: Display statistics about the library, including the total number of books and the percentage of books that have been read.
+- **Add a Book**: Save book details (title, author, year, genre, and read status).
+- **Remove a Book**: Delete a book by its title.
+- **Display all Books**: View all books in a table format.
+- **Search for a Book**: Search by title, author, genre, or read status.
+- **Statistics**: See the total number of books and percentage of read books.
 
 ## Installation
 
 1. Clone the repository:
+```bash
+git clone https://github.com/DanielHashmi/-Library-Management-System.git
+cd -Library-Management-System
+```
+2. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
 
-    ```sh
-    git clone https://github.com/DanielHashmi/-Library-Management-System.git
-    cd -Library-Management-System
-    ```
+3. Set up MongoDB connection:
+   - Create a `.env` file:
+```plaintext
+MONGO_DB_CONNECT=your_mongodb_connection_string
+```
 
-2. Install the required dependencies:
-
-    ```sh
-    pip install -r requirements.txt
-    ```
-
-3. Make sure you have a `library.csv` file in the project directory with the following columns:
-
-    ```csv
-    Title,Author,Publication Year,Genre,Read Status
-    ```
-
-## Usage
-
-Run the Streamlit app:
-
-```sh
+4. Run the app:
+```bash
 streamlit run library_manager.py
 ```
+
+## Author
+- **Daniel Hashmi**
+
