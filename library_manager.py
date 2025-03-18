@@ -75,11 +75,12 @@ def search_for_a_book():
 
 def display_statistics():
     st.header('📊 Library Statistics')
-    response_all = supabase_client.table("books").select("id", count="exact").execute()
-    total_books = response_all.count if response_all.count is not None else len(response_all.data or [])
-    response_read = supabase_client.table("books").select("id", count="exact").eq("Read_Status", True).execute()
-    read_books = response_read.count if response_read.count is not None else len(response_read.data or [])
+    response_all = supabase_client.table("books").select(count="exact").execute()
+    total_books = response_all.count if response_all.count is not None else 0
+    response_read = supabase_client.table("books").select(count="exact").eq("Read_Status", True).execute()
+    read_books = response_read.count if response_read.count is not None else 0
     read_percentage = (read_books / total_books * 100) if total_books > 0 else 0
+
     col1, col2 = st.columns(2)
     with col1:
         st.metric("Total Books", total_books)
